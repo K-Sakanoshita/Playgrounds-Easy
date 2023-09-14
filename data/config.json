@@ -1,0 +1,130 @@
+{
+    "aboutTitle": "遊具のある公園マップとは",
+    "aboutMessage": "OpenStreetMapのデータから公園マップを作るプログラムです。",
+    "licenceTitle": "MIT license",
+    "licenceMessage": "<a href='https://opensource.org/license/mit/'>https://opensource.org/license/mit/</a>",
+    "splashUrl": "./image/Playgrounds.png",
+    "initZoom": 14,
+    "maxZoom": 21,
+    "initView": [
+        135.4828,
+        34.7212
+    ],
+    "PoiViewZoom": 13,
+    "markerName": "Playgrounds",
+    "menu": [
+        {
+            "comment": "about",
+            "linkto": "javascript:cMapMaker.viewMessage(Conf.aboutTitle,Conf.aboutMessage)",
+            "divider": false
+        },
+        {
+            "comment": "owner",
+            "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
+            "divider": true
+        },
+        {
+            "comment": "licence_title",
+            "linkto": "javascript:cMapMaker.viewMessage(Conf.licenceTitle,Conf.licenceMessage)",
+            "divider": false
+        },
+        {
+            "comment": "develop site",
+            "linkto": "https://github.com/armd-02/Playgrounds",
+            "divider": false
+        },
+        {
+            "comment": "about OpenStreetMap",
+            "linkto": "https://www.openstreetmap.org/about",
+            "divider": false
+        }
+    ],
+    "detailMenu": [
+        {
+            "comment": "Open OSM",
+            "linkto": "javascript:winCont.openOSM(cMapMaker.open_osmid)",
+            "divider": false
+        },
+        {
+            "comment": "Close",
+            "linkto": "javascript:winCont.closeModal()",
+            "divider": false
+        }
+    ],
+    "detailView": {
+        "buttons": [
+            {
+                "btn_class": "btn btn-light border-secondary",
+                "code": "javascript:cMapMaker.shareURL()",
+                "icon_class": "fas fa-clone",
+                "btn_name": "share_link"
+            }
+        ]
+    },
+    "icon": {
+        "path": "maki-icon",
+        "circle": 32
+    },
+    "effect": {
+        "text": {
+            "size": 12,
+            "view": true
+        }
+    },
+    "tile_default": "OpenStreetMapJP",
+    "tile": {
+        "OpenStreetMapJP": {
+            "style": "./data/style.json"
+        },
+        "OSM_Standard": {
+            "style": {
+                "version": 8,
+                "sources": {
+                    "rtile": {
+                        "type": "raster",
+                        "tiles": [
+                            "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        ],
+                        "tileSize": 256,
+                        "maxzoom": 19,
+                        "attribution": "<a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
+                    }
+                },
+                "layers": [
+                    {
+                        "id": "raster-tiles",
+                        "type": "raster",
+                        "source": "rtile"
+                    }
+                ]
+            }
+        },
+        "GSI_pale": {
+            "style": {
+                "version": 8,
+                "sources": {
+                    "rtile": {
+                        "type": "raster",
+                        "tiles": [
+                            "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
+                        ],
+                        "tileSize": 256,
+                        "maxzoom": 18,
+                        "attribution": "<a href='https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html'>国土地理院(淡色) | &copy OpenStreetMap contributors</a>"
+                    }
+                },
+                "layers": [
+                    {
+                        "id": "raster-tiles",
+                        "type": "raster",
+                        "source": "rtile"
+                    }
+                ]
+            }
+        }
+    },
+    "menu_list": {
+        "template": "<a class='dropdown-item'><span></span></a><span class='dropdown-item'></span>",
+        "divider": "<div class='dropdown-divider'></div>"
+    }
+}

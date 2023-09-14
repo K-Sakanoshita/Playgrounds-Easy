@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>遊具のある公園マップ</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css" />
+  <script defer src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <script defer src="./lib/osmtogeojson.js"></script>
+  <script defer src="./lib/winlib.js"></script>
+  <script defer src="./lib/maplib.js"></script>
+  <script defer src="./lib/poilib.js"></script>
+  <script defer src="./lib/overpasslib.js"></script>
+  <script defer src="./lib/detaillib.js"></script>
+  <script defer src="./cmapmaker.js"></script>
+  <script defer src="./initialize.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <article id="article">
+      <div id="mapid"></div>
+    </article>
+  </div>
+
+  <div id="modal_splash" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document" data-keyboard="false">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" style="width: 100%;float: none !important" id="splash_image"><br>
+          <div class="d-flex justify-content-center mt-2">
+            <div class="spinner-border text-primary mx-auto" role="status"> <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal_window" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-fluid modal-dialog-scrollable m-1" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="dropdown">
+            <button type="button" class="btn btn-sm float-right menu mr-2" data-toggle="dropdown" aria-expanded="true" id="modal_window_menu">
+              <i class="fas fa-bars text-black"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="modal_menu" style="z-index: 1090" id="modal_menu"></div>
+          </div>
+          <h4 class="modal-title" id="modal_window_title"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="modal_window_message"></div>
+        </div>
+        <div class="modal-footer">
+          <div id="modal_footer"></div>
+          <button id="modal_window_yes" class="btn btn-primary"></button>
+          <button id="modal_window_no" class="btn btn-secondary"></button>
+          <button id="modal_window_close" class="btn btn-secondary"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="basemenu">
+    <div class="row m-1 p-1 bg-white shadow-lg rounded-top">
+      <div class="col-12 p-2 mr-2 d-flex align-items-center">
+        <div class="dropdown">
+          <button class="btn btn-light border-secondary float-right menu mr-2" data-toggle="dropdown" aria-expanded="true" id="global_menu">
+            <i class="fas fa-bars text-black"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="global_menu" style="z-index: 1090" id="main_menu">
+            <a class="dropdown-item"><span></span></a>
+            <span class="dropdown-item"></span>
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>
+        <a href="javascript:cMapMaker.viewMessage(Conf.aboutTitle,Conf.aboutMessage)">
+          <span class="title">遊具のある公園マップ</span><br />
+          <span class="subtitle">サンプルサイト</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+    "OverPassServer": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "osm": {
+        "overpass": [
+            "node[\"leisure\"=\"park\"]",
+            "way[\"leisure\"=\"park\"]",
+            "node[\"leisure\"=\"playground\"]",
+            "way[\"leisure\"=\"playground\"]",
+            "way[\"landuse\"=\"recreation_ground\"]",
+            "relation[\"leisure\"=\"park\"]",
+            "relation[\"leisure\"=\"playground\"]",
+            "relation[\"landuse\"=\"recreation_ground\"]",
+            "node[\"playground\"]",
+            "way[\"playground\"]"
+        ],
+        "tags": [
+            "leisure=park",
+            "leisure=playground",
+            "landuse=recreation_ground",
+            "playground"
+        ],
+        "expression": {
+            "stroke": "#409040",
+            "stroke-width": 2
+        }
+    }
+}
