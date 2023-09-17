@@ -1,0 +1,23 @@
+    "GSI_ort": {
+        "style": {
+            "version": 8,
+            "sources": {
+                "rtile": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg"
+                    ],
+                    "tileSize": 256,
+                    "maxzoom": 18,
+                    "attribution": "<a    href='https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html'>国土地理院(オルソ画像) | &copy OpenStreetMap contributors</a>"
+                }
+            },
+            "layers": [
+                {
+                    "id": "raster-tiles",
+                    "type": "raster",
+                    "source": "rtile"
+                }
+            ]
+        }
+    }
